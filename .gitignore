@@ -4,6 +4,7 @@
 code/.xmake
 code/build
 /emsdk
+/src/assets/models
 
 dist
 node_modules

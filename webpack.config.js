@@ -285,6 +285,19 @@ module.exports = async() => {
                         }
                     ]
                 },
+
+                // .glb
+                {
+                    test: /\.glb$/i,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: 'assets/models/[hash].[ext]',
+                            },
+                        }
+                    ]
+                },
     
                 // wasm js 的特殊性
                 {

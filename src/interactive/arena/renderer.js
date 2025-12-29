@@ -38,6 +38,13 @@ export default class Renderer {
 
     /**
      * 
+     */
+    get scene() {
+        return this.#scene;
+    }
+
+    /**
+     * 
      * @param {*} canvas 
      */
     constructor(canvas) {
@@ -62,6 +69,7 @@ export default class Renderer {
      */
     resize(w, h, pixel_ratio) {
         this.#canvas_renderer.setPixelRatio(pixel_ratio);
+        this.#canvas_renderer.setSize(w, h);
         this.#camera = new THREE.PerspectiveCamera(
             75,
             w / h,
@@ -69,7 +77,7 @@ export default class Renderer {
             10000
         );
 
-        this.#camera.position.set(0, 0, 100);
+        this.#camera.position.set(0, 2, 4);
         this.#camera.lookAt(0, 0, 0);
         if (this.#controls) {
             this.#controls.reset();
